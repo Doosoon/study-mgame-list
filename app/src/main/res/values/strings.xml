@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MameGameList</string>
+    <string name="game_search_title_hint">"Input game title to search"</string>
+</resources>
