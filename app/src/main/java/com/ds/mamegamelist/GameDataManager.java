@@ -9,6 +9,7 @@ import java.util.List;
 
 public class GameDataManager {
 
+    private static final int GAME_ITEM_COUNT = 10;
     private String mTitles[] = {"삼국지 다이너스티 워", "천지를 먹다2",
             "Final Fight", "Captain Commando", "캐딜락과 공룡"};
     private int mNumber[] = {109, 95, 99, 102, 93};
@@ -29,7 +30,7 @@ public class GameDataManager {
     }
 
     private GameDataManager() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < GAME_ITEM_COUNT; i++) {
             GameData data = new GameData(mTitles[i % 5], mNumber[i % 5], mImageTitleResIds[i % 5], mImageContentResIds[i % 5]);
             mGameDataList.add(data);
         }
@@ -40,7 +41,7 @@ public class GameDataManager {
         return mGameDataList.get(index);
     }
 
-    public int getCount() { return 10; }
+    public int getCount() { return GAME_ITEM_COUNT; }
 
     public class GameData {
         public final int number;
