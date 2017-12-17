@@ -1,7 +1,9 @@
 package com.ds.mamegamelist;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,8 +16,8 @@ public class GameItemViewHolder extends RecyclerView.ViewHolder {
     private ImageView mImageTitle;
     private ImageView mImageContent;
     private TextView mTitle;
-    GameItemViewHolder(View itemView) {
-        super(itemView);
+    GameItemViewHolder(LayoutInflater inflater, ViewGroup parent) {
+        super(inflater.inflate(R.layout.game_item, parent, false));
         mImageTitle = itemView.findViewById(R.id.item_image_title);
         mImageContent = itemView.findViewById(R.id.item_image_content);
         mTitle = itemView.findViewById(R.id.item_title);
