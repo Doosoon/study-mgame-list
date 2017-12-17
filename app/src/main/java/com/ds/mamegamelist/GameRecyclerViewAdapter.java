@@ -2,7 +2,6 @@ package com.ds.mamegamelist;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 /**
@@ -11,12 +10,6 @@ import android.view.ViewGroup;
 
 public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameItemViewHolder> {
 
-    private String mTitles[] = {"삼국지 다이너스티 워", "천지를 먹다2",
-            "Final Fight", "Captain Commando", "캐딜락과 공룡"};
-    private int mNumber[] = {109,95,99,102,93};
-
-    private int mImageTitleResIds[] = { R.drawable.dw_t, R.drawable.wf_t, R.drawable.ff_t, R.drawable.cc_t, R.drawable.cd_t };
-    private int mImageContentResIds[] = { R.drawable.dw_c, R.drawable.wf_c, R.drawable.ff_c, R.drawable.cc_c, R.drawable.cd_c };
     @Override
     public GameItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -26,13 +19,11 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameItemViewHo
 
     @Override
     public void onBindViewHolder(GameItemViewHolder holder, int position) {
-        holder.setTitleNumber(mTitles[position%5], mNumber[position%5]);
-        holder.setImageTitle(mImageTitleResIds[position%5]);
-        holder.setImageContent(mImageContentResIds[(position)%5]);
+        holder.bindData(position);
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return GameDataManager.getInstance().getCount();
     }
 }
