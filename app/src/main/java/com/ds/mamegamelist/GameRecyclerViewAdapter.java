@@ -11,8 +11,9 @@ import android.view.ViewGroup;
 
 public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameItemViewHolder> {
 
-    private String mTitles[] = {"삼국지 다이너스티 워\n109", "천지를 먹다2\n95",
-            "Final Fight\n99", "Captain Commando\n102", "캐딜락과 공룡\n93", "333", "111", "222", "333", "111", "222", "333", "111", "222", "333", "111", "222", "333", "111", "222", "333"};
+    private String mTitles[] = {"삼국지 다이너스티 워", "천지를 먹다2",
+            "Final Fight", "Captain Commando", "캐딜락과 공룡"};
+    private int mNumber[] = {109,95,99,102,93};
 
     private int mImageTitleResIds[] = { R.drawable.dw_t, R.drawable.wf_t, R.drawable.ff_t, R.drawable.cc_t, R.drawable.cd_t };
     private int mImageContentResIds[] = { R.drawable.dw_c, R.drawable.wf_c, R.drawable.ff_c, R.drawable.cc_c, R.drawable.cd_c };
@@ -25,7 +26,7 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameItemViewHo
 
     @Override
     public void onBindViewHolder(GameItemViewHolder holder, int position) {
-        holder.setTitle(mTitles[position]);
+        holder.setTitleNumber(mTitles[position%5], mNumber[position%5]);
         holder.setImageTitle(mImageTitleResIds[position%5]);
         holder.setImageContent(mImageContentResIds[(position)%5]);
     }

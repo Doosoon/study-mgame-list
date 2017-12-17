@@ -16,14 +16,19 @@ public class GameItemViewHolder extends RecyclerView.ViewHolder {
     private ImageView mImageTitle;
     private ImageView mImageContent;
     private TextView mTitle;
+    private TextView mNumber;
     GameItemViewHolder(LayoutInflater inflater, ViewGroup parent) {
         super(inflater.inflate(R.layout.game_item, parent, false));
         mImageTitle = itemView.findViewById(R.id.item_image_title);
         mImageContent = itemView.findViewById(R.id.item_image_content);
         mTitle = itemView.findViewById(R.id.item_title);
+        mNumber = itemView.findViewById(R.id.item_number);
+
     }
-    void setTitle(String title) {
+    void setTitleNumber(String title, int number) {
+
         mTitle.setText(title);
+        mNumber.setText(String.valueOf(number));
     }
     void setImageTitle(int resId) {
         mImageTitle.setImageResource(resId);
