@@ -21,6 +21,7 @@ public class GameItemViewHolder extends RecyclerView.ViewHolder {
     private TextView mNumber;
     private Context mContext;
     private int mId;
+
     GameItemViewHolder(LayoutInflater inflater, ViewGroup parent) {
         super(inflater.inflate(R.layout.game_item, parent, false));
         mImageTitle = itemView.findViewById(R.id.item_image_title);
@@ -29,17 +30,15 @@ public class GameItemViewHolder extends RecyclerView.ViewHolder {
         mNumber = itemView.findViewById(R.id.item_number);
         mContext = parent.getContext();
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, DetailActivity.class);
-                intent.putExtra( "INDEX", mId);
-                mContext.startActivity(intent);
-            }
+        itemView.setOnClickListener((view) -> {
+            Intent intent = new Intent(mContext, DetailActivity.class);
+            intent.putExtra("INDEX", mId);
+            mContext.startActivity(intent);
         });
 
     }
-    public void bindData( int id) {
+
+    public void bindData(int id) {
         mId = id;
         GameDataManager.GameData data = GameDataManager.getInstance().getData(id);
         mTitle.setText(data.title);
