@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class GameFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         Log.d("Test", "onCreate of Fragment");
     }
 
@@ -36,6 +38,9 @@ public class GameFragment extends Fragment {
         mGameRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new GameRecyclerViewAdapter();
         mGameRecyclerView.setAdapter(mAdapter);
+
+        AppCompatActivity activity = (AppCompatActivity)getActivity();
+        activity.getSupportActionBar().setSubtitle(String.valueOf(GameDataManager.getInstance().getCount()));
 
         Log.d("Test", "onCreateView of Fragment");
         return v;
