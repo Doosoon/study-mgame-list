@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
         if (fragment == null) {
-            fragment = new GameFragment();
+            fragment = new GameListFragment();
             Log.d("Test", "onCreate fragment new");
             fm.beginTransaction().add(R.id.fragment_container, fragment)
                     .commit();

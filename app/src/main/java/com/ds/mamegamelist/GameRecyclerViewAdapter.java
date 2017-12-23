@@ -19,7 +19,8 @@ public class GameRecyclerViewAdapter extends RecyclerView.Adapter<GameItemViewHo
 
     @Override
     public void onBindViewHolder(GameItemViewHolder holder, int position) {
-        holder.bindData(position);
+        GameDataManager.GameData data = GameDataManager.getInstance().getData(position);
+        holder.bindData(data);
     }
 
     @Override

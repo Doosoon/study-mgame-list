@@ -17,7 +17,7 @@ import android.widget.EditText;
  * Created by doosoon on 2017-11-25.
  */
 
-public class GameFragment extends Fragment {
+public class GameListFragment extends Fragment {
 
     private EditText mTitleField;
     private RecyclerView mGameRecyclerView;
@@ -32,7 +32,7 @@ public class GameFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_game, container, false);
+        View v = inflater.inflate(R.layout.fragment_game_list, container, false);
         mTitleField = (EditText)v.findViewById(R.id.game_searh_title);
         mGameRecyclerView = (RecyclerView) v.findViewById(R.id.game_recycler_view);
         mGameRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

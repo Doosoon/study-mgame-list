@@ -32,15 +32,21 @@ public class GameItemViewHolder extends RecyclerView.ViewHolder {
 
         itemView.setOnClickListener((view) -> {
             Intent intent = new Intent(mContext, DetailActivity.class);
-            intent.putExtra("INDEX", mId);
+            intent.putExtra("extra_game_id", mId);
             mContext.startActivity(intent);
+
+//            Intent i2 = new Intent(Intent.ACTION_SEND);
+//            i2.setType("text/plain");
+//            i2.putExtra(Intent.EXTRA_TEXT, "aaaa");
+//            i2.putExtra(Intent.EXTRA_SUBJECT, "subject");
+        //    i2 = Intent.createChooser(i2, "Send Game");
+//            mContext.startActivity(i2);
         });
 
     }
 
-    public void bindData(int id) {
-        mId = id;
-        GameDataManager.GameData data = GameDataManager.getInstance().getData(id);
+    public void bindData(GameDataManager.GameData data) {
+        mId = data.number;
         mTitle.setText(data.title);
         mNumber.setText(String.valueOf(data.number));
         mImageTitle.setImageResource(data.titleImageResId);
