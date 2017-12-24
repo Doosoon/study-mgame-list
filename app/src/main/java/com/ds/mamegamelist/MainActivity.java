@@ -23,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
             Log.d("Test", "onCreate fragment committed");
         }
-        Log.d("Test", "onCreate end");
+        Log.d("CP_TEST", "onCreate end");
     }
 }

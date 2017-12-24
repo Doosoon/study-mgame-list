@@ -1,5 +1,6 @@
 package com.ds.mamegamelist;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -54,6 +55,15 @@ public class GameDetailFragment extends Fragment {
         mPhotoButton.setOnClickListener((v)-> {
             final Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivity(captureIntent);
+        });
+        ((Button)view.findViewById(R.id.game_cp_test)).setOnClickListener((v)-> {
+            ComponentName comp = new ComponentName("com.ds.gamecontentapp", "com.ds.gamecontentapp.MainActivity");
+            Intent ti = new Intent();
+            ti.setComponent(comp);
+            getActivity().grantUriPermission("com.ds.gamecontentapp",
+                    Uri.parse("content://com.ds.mamegamelist.gamecontentprovider/test"),
+                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            startActivity(ti);
         });
 
         return view;

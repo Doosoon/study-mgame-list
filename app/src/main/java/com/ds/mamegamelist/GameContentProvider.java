@@ -4,8 +4,10 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 
 public class GameContentProvider extends ContentProvider {
+    private static final String TAG = "CP_TEST";
     public GameContentProvider() {
     }
 
@@ -31,7 +33,8 @@ public class GameContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         // TODO: Implement this to initialize your content provider on startup.
-        return false;
+        Log.d(TAG, "create");
+        return true;
     }
 
     @Override
@@ -45,6 +48,8 @@ public class GameContentProvider extends ContentProvider {
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         // TODO: Implement this to handle requests to update one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
+        Log.d(TAG, "GameContentProvider: " + uri.toString());
+        return 0;
     }
 }

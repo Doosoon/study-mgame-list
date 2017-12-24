@@ -26,4 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Take a picture"/>
+    <Button
+        android:id="@+id/game_cp_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invoke other app for Content Provider"/>
+
 </LinearLayout>
