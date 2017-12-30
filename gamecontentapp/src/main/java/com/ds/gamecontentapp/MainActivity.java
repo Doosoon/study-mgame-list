@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             ContentValues cv = new ContentValues();
             try {
                 getContentResolver().update(
-                        Uri.parse("content://com.ds.mamegamelist.gamecontentprovider/test"),
+                        Uri.parse("content://com.ds.mamegamelist.gamecontentprovider/test2"),
                         cv, null, null);
             } catch (SecurityException e) {
                 Log.d("CP_TEST", e.toString());

@@ -28,7 +28,6 @@
             android:authorities="com.ds.mamegamelist.gamecontentprovider"
             android:enabled="true"
             android:exported="true"
-            android:multiprocess="true"
             android:writePermission="com.ds.mamegamelist.provider.WRITE_DATA"
             android:grantUriPermissions="true">
         </provider>
